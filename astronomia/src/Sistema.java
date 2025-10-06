@@ -64,6 +64,19 @@ public class Sistema {
         }
         return x;
     }
+
+    public boolean pianetiOrdinati() {
+        double min = corpiCelesti.get(0).getDistanzaStella();
+        boolean ordinato = false;
+        for (int i = 1; i < corpiCelesti.size(); i++) {
+            if (corpiCelesti.get(i).getDistanzaStella() < min) {
+                return false;
+            } else {
+                ordinato = true;
+            }
+        }
+        return ordinato;
+    }
 }
 
 
