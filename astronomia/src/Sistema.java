@@ -13,6 +13,7 @@ public class Sistema {
         corpiCelesti.add(cc); // aggiungo il corpo celeste
     }
 
+    // - int contaStelle, che conta quante stelle sono contenute
     public int contaStelle() {
         int c = 0;
         for (CorpoCeleste corpoCeleste : corpiCelesti) {
@@ -23,6 +24,8 @@ public class Sistema {
         return c;
     }
 
+    // - boolean pianetiConsecutivi, che verifica se i pianeti inseriti nella 
+    // collezione sono tutti consecutivi (senza stelle nel mezzo)
     public boolean pianetiConsecutivi() {
 
         int x = 0;
@@ -30,7 +33,7 @@ public class Sistema {
         // Scorro tutto l array
         for (int i = 0; i < corpiCelesti.size(); i++) {
 
-            // Se corpicelesti.get(i) è un piaeta, controllo quelli successivi
+            // Se corpicelesti.get(i) è un pianeta, controllo quelli successivi
             if (corpiCelesti.get(i) instanceof Pianeta) {
 
                 for (x++; x < corpiCelesti.size(); x++) {
@@ -53,7 +56,8 @@ public class Sistema {
 
     }
 
-    // Rimozione di un pianeta inserendo il suo nome
+    // - boolean pianetiOrdinati, che verifica se le distanze dei pianeti sono in ordine crescente
+
     public int rimuoviPianeti(String s) {
         int x = 0;
         for (int i = 0; i < corpiCelesti.size(); i++) {
@@ -64,6 +68,8 @@ public class Sistema {
         }
         return x;
     }
+    
+    // - int rimuoviPianeti(String s), che toglie tutti i pianeti il cui nome contiene la sottostringa dalla collezione
 
     public boolean pianetiOrdinati() {
         double min = corpiCelesti.get(0).getDistanzaStella();
